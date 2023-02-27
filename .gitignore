@@ -478,3 +478,4 @@ $RECYCLE.BIN/
 
 dist/
 .parcel-cache
+src/**/*.js
