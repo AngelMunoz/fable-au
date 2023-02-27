@@ -1,5 +1,10 @@
 <h2>This is my Counter</h2>
-<button click.trigger="increment()">Increment</button>
-<button click.trigger="decrement()">Decrement</button>
-<input type="number" value.bind="counter" />
+<sl-button variant="primary" click.trigger="increment()">Increment</sl-button>
+<sl-button variant="primary" click.trigger="decrement()">Decrement</sl-button>
+<sl-input
+  name="counter"
+  type="number"
+  value.bind="counter"
+  sl-change.trigger="counter = +$event.target.value"
+></sl-input>
 <p>${{counter}| json }</p>
