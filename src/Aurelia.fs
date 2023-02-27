@@ -21,6 +21,26 @@ type Aurelia =
     static member start() : unit = jsNative
     member _.start() : unit = jsNative
 
+[<ImportMember "aurelia">]
+type IRegistry =
+    interface
+    end
+
+[<ImportMember "aurelia">]
+type LoggerConfiguration =
+    static member create(config: obj) : IRegistry = jsNative
+
+let ConsoleSink: obj = importMember "aurelia"
+
+[<ImportMember "aurelia">]
+type ILogger =
+    abstract scopeTo: name: string -> ILogger
+    abstract debug: value: string -> unit
+    abstract info: value: string -> unit
+    abstract warn: value: string -> unit
+    abstract trace: value: string -> unit
+
+
 
 
 type Decorators =
